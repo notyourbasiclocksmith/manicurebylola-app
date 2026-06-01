@@ -1,0 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum BookingStatus {
+  PENDING // creada, depósito aún no pagado
+  CONFIRMED // depósito pagado / confirmada por Lola
+  CANCELLED // cancelada
+  COMPLETED // servicio realizado
+}
+
+enum DepositStatus {
+  UNPAID
+  PAID
+  REFUNDED
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String
+  // Precio en centavos. null = "precio pendiente / desde"
+  priceCents  Int?
+  priceNote   String? // p.ej. "desde", "pendiente"
+  durationMin Int      @default(60)
+  // Depósito requerido en centavos para este servicio
+  depositCents Int     @default(2000)
+  active      Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  bookings    Booking[]
+}
+
+model Booking {
+  id            String        @id @default(cuid())
+  fullName      String
+  phone         String
+  email         String
+  preferredDate DateTime
+  preferredTime String // "10:00 AM"
+  notes         String?
+  policyAccepted Boolean      @default(false)
+
+  serviceId     String
+  service       Service       @relation(fields: [serviceId], references: [id])
+
+  status        BookingStatus @default(PENDING)
+  depositStatus DepositStatus @default(UNPAID)
+  depositCents  Int           @default(0)
+
+  stripeSessionId       String? @unique
+  stripePaymentIntentId String?
+
+  adminNote     String?
+
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@index([preferredDate])
+  @@index([status])
+}
+
+model GalleryImage {
+  id        String   @id @default(cuid())
+  url       String
+  caption   String?
+  category  String   @default("general") // builder-gel, natural, nail-art, antes-despues
+  sortOrder Int      @default(0)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model BusinessHour {
+  id        String  @id @default(cuid())
+  // 0 = Domingo ... 6 = Sábado
+  dayOfWeek Int     @unique
+  isOpen    Boolean @default(true)
+  openTime  String  @default("09:00")
+  closeTime String  @default("18:00")
+}
+
+model Setting {
+  key   String @id
+  value String
+}

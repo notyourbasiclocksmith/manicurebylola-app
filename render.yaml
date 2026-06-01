@@ -1,0 +1,46 @@
+# Render Blueprint para Manicure by Lola
+# Despliega un Web Service (Next.js) + base de datos PostgreSQL.
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: manicurebylola
+    runtime: node
+    plan: starter
+    region: oregon
+    branch: main
+    buildCommand: npm install && npm run build && npx prisma db push --accept-data-loss
+    startCommand: npm run start
+    healthCheckPath: /
+    autoDeploy: true
+    # Disco persistente para las fotos de la galería subidas desde el admin.
+    disk:
+      name: uploads
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: manicurebylola-db
+          property: connectionString
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: UPLOAD_DIR
+        value: /var/data/uploads
+      - key: NODE_VERSION
+        value: "20.18.0"
+
+databases:
+  - name: manicurebylola-db
+    plan: basic-256mb
+    region: oregon
+    postgresMajorVersion: "16"

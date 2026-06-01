@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta: rosa nude, blanco, dorado suave, beige */
+  --color-nude: #f6e7e1;
+  --color-nude-light: #fbf3ef;
+  --color-rose: #e9c5bd;
+  --color-rose-deep: #d99f93;
+  --color-beige: #f3ece4;
+  --color-sand: #e7dccd;
+  --color-gold: #c9a96a;
+  --color-gold-light: #e3cfa3;
+  --color-ink: #4a3f3a;
+  --color-ink-soft: #7a6c64;
+  --color-cream: #fffaf7;
+
+  --font-serif: var(--font-serif-loaded), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-sans-loaded), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 10px 40px -12px rgba(140, 100, 80, 0.25);
+  --radius-xl2: 1.75rem;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Utilidades de marca */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--color-rose-deep), var(--color-gold));
+  color: #fff;
+  padding: 0.85rem 1.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--color-ink);
+  padding: 0.8rem 1.7rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  border: 1.5px solid var(--color-rose-deep);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-outline:hover {
+  background: var(--color-rose-deep);
+  color: #fff;
+}
+
+.section {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-sand);
+  border-radius: var(--radius-xl2);
+  box-shadow: var(--shadow-soft);
+}
+
+.input {
+  width: 100%;
+  border: 1.5px solid var(--color-sand);
+  background: #fff;
+  border-radius: 0.9rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--color-rose-deep);
+  box-shadow: 0 0 0 3px rgba(217, 159, 147, 0.2);
+}
+.label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  color: var(--color-ink-soft);
+}

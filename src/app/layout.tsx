@@ -24,15 +24,17 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Manicure profesional en Fort Worth: builder gel, gel manicure, acrylic nails, nail art y más. Uñas elegantes, limpias y duraderas. Reserva tu cita en línea.",
+    "Manicure profesional en Dallas y Addison: builder gel, gel manicure, acrylic nails, nail art y más. Uñas elegantes, limpias y duraderas. Reserva tu cita en línea.",
   keywords: [
     "manicure near me",
     "builder gel nails",
-    "nail salon Fort Worth",
+    "nail salon Dallas",
+    "nail salon Addison",
     "gel manicure",
-    "nails in Fort Worth",
+    "nails in Dallas",
+    "nails Addison TX",
     "manicure by lola",
-    "acrylic nails Fort Worth",
+    "acrylic nails Dallas",
     "nail art",
   ],
   openGraph: {

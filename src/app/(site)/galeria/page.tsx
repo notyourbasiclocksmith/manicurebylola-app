@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Galería",
   description:
-    "Fotos de trabajos de Manicure by Lola: builder gel, diseños naturales, nail art y antes/después en Fort Worth.",
+    "Fotos de trabajos de Manicure by Lola: builder gel, diseños naturales, nail art y antes/después en Dallas y Addison.",
 };
 
 const categories = [

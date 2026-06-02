@@ -9,20 +9,20 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://manicurebylola.com",
 
   // --- Ubicación / área de servicio (usado en SEO local) ---
-  city: "Fort Worth",
+  city: "Dallas",
   state: "TX",
-  region: "Fort Worth, Texas",
-  serviceArea: "Fort Worth y el área de DFW",
+  region: "Dallas, Texas",
+  serviceArea: "Addison y el área de Dallas (DFW)",
   // Dirección visible (opcional). Déjala vacía si trabaja a domicilio / cita privada.
-  address: "",
+  address: "Addison, TX",
 
-  // --- Contacto (CAMBIA estos valores por los reales de Lola) ---
-  phone: "+1 (817) 000-0000",
-  phoneHref: "+18170000000",
-  whatsapp: "18170000000", // solo dígitos con código de país, para wa.me
-  email: "hola@manicurebylola.com",
-  instagram: "manicurebylola",
-  instagramUrl: "https://instagram.com/manicurebylola",
+  // --- Contacto ---
+  phone: "+1 (945) 210-8843",
+  phoneHref: "+19452108843",
+  whatsapp: "19452108843", // solo dígitos con código de país, para wa.me
+  email: "lolitabello22@gmail.com",
+  instagram: "nails_by_lola23",
+  instagramUrl: "https://instagram.com/nails_by_lola23",
 
   // --- Depósitos por defecto (en dólares, solo informativo en el front) ---
   depositNormal: 20,

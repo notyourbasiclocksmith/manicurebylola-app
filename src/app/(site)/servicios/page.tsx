@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Servicios y precios",
   description:
-    "Builder gel, gel manicure, acrylic nails, refill, nail art y removal en Fort Worth. Consulta precios y reserva tu cita con depósito en línea.",
+    "Builder gel, gel manicure, acrylic nails, refill, nail art y removal en Dallas y Addison. Consulta precios y reserva tu cita con depósito en línea.",
 };
 
 export default async function ServiciosPage() {

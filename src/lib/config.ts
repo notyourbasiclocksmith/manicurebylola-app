@@ -4,7 +4,8 @@
 
 export const site = {
   name: "Manicure by Lola",
-  tagline: "Uñas elegantes, limpias y duraderas hechas con amor y detalle.",
+  tagline:
+    "Diseños elegantes, acabados impecables y resultados duraderos que mantienen tus uñas naturales sanas y hermosas.",
   domain: "manicurebylola.com",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://manicurebylola.com",
 

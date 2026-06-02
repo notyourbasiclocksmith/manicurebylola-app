@@ -56,17 +56,22 @@ export default async function HomePage() {
           </div>
 
           <div className="relative">
+            <div className="absolute -inset-3 -z-10 rounded-[2.4rem] bg-gradient-to-br from-[var(--color-rose)] to-[var(--color-gold-light)] opacity-40 blur-2xl" />
             <div className="aspect-[4/5] overflow-hidden rounded-[2rem] bg-gradient-to-br from-[var(--color-rose)] via-[var(--color-nude)] to-[var(--color-gold-light)] shadow-[var(--shadow-soft)]">
-              <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-                <Sparkles size={48} className="text-white/80" />
-                <p className="mt-4 font-serif text-3xl font-semibold text-white drop-shadow">
-                  Uñas que enamoran
-                </p>
-                <p className="mt-2 text-sm text-white/90">
-                  Reemplaza este bloque con una foto de tu trabajo desde el panel
-                  de galería.
-                </p>
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/hero-nails.jpg"
+                alt="Manicure nude elegante hecho por Manicure by Lola en Dallas y Addison"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-5 -left-5 hidden rounded-2xl bg-white/95 px-5 py-3 shadow-[var(--shadow-soft)] sm:block">
+              <p className="font-serif text-lg font-semibold text-[var(--color-rose-deep)]">
+                Uñas que enamoran
+              </p>
+              <p className="text-xs text-[var(--color-ink-soft)]">
+                Limpias · elegantes · duraderas
+              </p>
             </div>
           </div>
         </div>

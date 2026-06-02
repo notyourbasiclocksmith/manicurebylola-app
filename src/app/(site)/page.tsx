@@ -151,8 +151,9 @@ export default async function HomePage() {
             Hola, soy Lola
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[var(--color-ink-soft)]">
-            Me especializo en manicures limpias, elegantes y duraderas, cuidando
-            cada detalle para que salgas feliz con tus uñas.
+            Desde siempre me ha apasionado el cuidado y la belleza de las uñas.
+            Disfruto crear diseños que reflejen tu estilo, prestando atención a
+            cada detalle para que obtengas resultados hermosos y duraderos.
           </p>
           <div className="mt-6 flex gap-3">
             <Link href="/reservar" className="btn-primary">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Phone, MessageCircle, MapPin } from "lucide-react";
+import { Instagram, Phone, MessageCircle, MapPin, Lock } from "lucide-react";
 import { navLinks, site, whatsappLink } from "@/lib/config";
 
 export default function Footer() {
@@ -72,8 +72,18 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-[var(--color-sand)] py-5 text-center text-xs text-[var(--color-ink-soft)]">
-        © {new Date().getFullYear()} {site.name} · {site.region} · Todos los
-        derechos reservados
+        <p>
+          © {new Date().getFullYear()} {site.name} · {site.region} · Todos los
+          derechos reservados
+        </p>
+        <p className="mt-2">
+          <Link
+            href="/admin/login"
+            className="inline-flex items-center gap-1 hover:text-[var(--color-rose-deep)]"
+          >
+            <Lock size={12} /> Acceso Lola
+          </Link>
+        </p>
       </div>
     </footer>
   );

@@ -25,9 +25,8 @@ export default async function ServiciosPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-[var(--color-ink-soft)]">
             Cada servicio incluye duración aproximada y precio. Para confirmar tu
-            cita se requiere un depósito de ${site.depositNormal} (o $
-            {site.depositLarge} para sets largos, nail art o trabajos
-            personalizados) que se aplica al total del servicio.
+            cita se requiere un depósito de ${site.depositNormal} que se aplica
+            al total del servicio.
           </p>
         </div>
       </section>
